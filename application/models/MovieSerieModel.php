@@ -43,23 +43,14 @@ class MovieSerieModel extends CI_Model {
 
 		$last_id = $this->lastRowMovieSeries();
 
-		if (count($genres[0]) > 4) 
-		{
-			return false;
-		}
-		else{
-			foreach ($genres[0] as $key => $value) {
-				$genres_id = array(
+		foreach ($genres[0] as $key => $value) {
+			$genres_id = array(
 				'genres_id'			=> $value,
 				'movieseries_id' 	=> $last_id->id
-				);
-				$this->db->insert('genres_movieseries', $genres_id);
-				}
-				return true;
-
-		}	
-
-	}
+			);
+			$this->db->insert('genres_movieseries', $genres_id);
+		}
+	}	
 
 	public function update($id, $title, $author, $actors, $description, $country, $premiere, $poster, $rating, $trailer, $genres, $category)
 	{
@@ -77,20 +68,6 @@ class MovieSerieModel extends CI_Model {
 		);
 		$this->db->where('id', $id);
 		$this->db->update('movieseries', $data);
-
-		if (count($genres[0]) > 4) {
-			return false;
-		}else{
-			foreach ($genres[0] as $key => $value) {
-				$genres_id = array(
-					'genres_id' => $value,
-					'movieseries_id' => $id
-				);
-				$this->db->update('genres_movieseries', $genres_id);
-				}
-
-		}
-		return true;	
 
 	}
 

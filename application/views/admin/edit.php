@@ -35,7 +35,7 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-12">
 								<label>País</label>
 								<input type="text" name="edit_country" value="<?php echo $ms->country ?>" class="form-control">
 							</div>
@@ -45,13 +45,9 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-8">
+							<div class="form-group col-md-12">
 								<label>Poster</label>
 								<input type="text" name="edit_poster" value="<?php echo $ms->poster ?>" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>Calificación</label>
-								<input type="text" name="edit_rating" value="<?php echo $ms->rating ?>" class="form-control">
 							</div>
 						</div>
 						<div class="form-row">
@@ -62,23 +58,16 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<label>Géneros</label>
-								<select class="form-control" name="edit_genres[]" multiple="" required>
-									<option>Seleccione hasta 4 géneros</option>
-									<?php foreach ($genres as $key): ?>
-										<option value="<?php echo $key->id; ?>">
-											<?php echo $key->name; ?>
-										</option>
-									<?php endforeach ?>
-								</select>
-							</div>
-							<div class="form-group col-md-6">
 								<label>Categoria</label>
 								<select class="form-control" name="edit_category" required>
 									<option>Seleccione</option>
 									<option value="Movie">Movie</option>
 									<option value="Serie">Serie</option>
 								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<label>Calificación</label>
+								<input type="text" name="edit_rating" value="<?php echo $ms->rating ?>" class="form-control">
 							</div>
 						</div>
 						<div class="text-center">

@@ -13,6 +13,15 @@ body{
 	text-decoration: none !important;
 }
 
+#home img{
+	width: 200px;
+	height: 300px;
+}
+
+#search img{
+	width: 200px;
+	height: 300px;
+}
 
 .container-fluid{
 	font-family: 'Poppins', sans-serif;
@@ -70,10 +79,7 @@ footer{
 	font-size: 40px;
 }
 
-#home img{
-	width: 200px;
-	height: 300px;
-}
+
 
 
 

@@ -47,13 +47,9 @@ class MovieSerie extends CI_Controller {
 
 		$movie_serie = $this->MovieSerieModel->create($title, $author, $actors, $description, $country, $premiere, $poster, $rating, $trailer, $genres, $category);
 
-		if ($movie_serie) {
-			$this->session->set_flashdata('success','Trailer agregado existosamente!');
-			redirect('movieserie/create');
-		}else{
-			$this->session->set_flashdata('error','La cantidad máxima de generos es 4');
-			redirect('movieserie/create');
-		}		
+		$this->session->set_flashdata('success','Trailer agregado existosamente!');
+		redirect('movieserie/create');	
+			
 	}
 
 	public function edit()
@@ -69,7 +65,7 @@ class MovieSerie extends CI_Controller {
 
 	public function update()
 	{
-		$id = $this->uri->segment(3);
+		$id 			= $this->uri->segment(3);
 		$title 			= $this->input->post('edit_title');
 		$author 		= $this->input->post('edit_author');
 		$actors 		= $this->input->post('edit_actors');
@@ -84,13 +80,8 @@ class MovieSerie extends CI_Controller {
 
 		$movie_serie = $this->MovieSerieModel->update($id, $title, $author, $actors, $description, $country, $premiere, $poster, $rating, $trailer, $genres, $category);
 
-		if ($movie_serie) {
-			$this->session->set_flashdata('success','Trailer editado existosamente!');
-			redirect('movieserie/index');
-		}else{
-			$this->session->set_flashdata('error','La cantidad máxima de generos es 4');
-			redirect('movieserie/index');
-		}		
+		$this->session->set_flashdata('success','Trailer editado existosamente!');
+		redirect('movieserie/index');		
 	}
 
 	public function delete()
