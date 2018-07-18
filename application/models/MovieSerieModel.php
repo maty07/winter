@@ -43,9 +43,11 @@ class MovieSerieModel extends CI_Model {
 
 		$last_id = $this->lastRowMovieSeries();
 
-		if (count($genres[0]) > 4) {
+		if (count($genres[0]) > 4) 
+		{
 			return false;
-		}else{
+		}
+		else{
 			foreach ($genres[0] as $key => $value) {
 				$genres_id = array(
 				'genres_id'			=> $value,
@@ -53,9 +55,9 @@ class MovieSerieModel extends CI_Model {
 				);
 				$this->db->insert('genres_movieseries', $genres_id);
 				}
+				return true;
 
-		}
-		return true;	
+		}	
 
 	}
 

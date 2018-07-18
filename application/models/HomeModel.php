@@ -31,50 +31,50 @@ class HomeModel extends CI_Model {
 	{
 		$this->db->select('id, poster');
 		$this->db->order_by('id', 'DESC');
-		$this->db->limit(6);
+		$this->db->limit(9);
 		$query = $this->db->get('movieseries');
 		return $query->result();
 	}
 
 	public function getAccion()
 	{
-		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 1 LIMIT 6');
+		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 1 LIMIT 9');
 		return $query->result();
 	}
 
 	public function getAnimacion()
 	{
-		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 2 LIMIT 6');
+		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 2 LIMIT 9');
 		return $query->result();
 	}
 
 	public function getCienciaFiccion()
 	{
-		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 5 LIMIT 6');
+		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 5 LIMIT 9');
 		return $query->result();
 	}
 
 	public function getComedia()
 	{
-		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 7 LIMIT 6');
+		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 7 LIMIT 9');
 		return $query->result();
 	}
 
 	public function getDrama()
 	{
-		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 9 LIMIT 6');
+		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 9 LIMIT 9');
 		return $query->result();
 	}	
 
 	public function getRomance()
 	{
-		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 14 LIMIT 6');
+		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 14 LIMIT 9');
 		return $query->result();
 	}
 
 	public function getTerror()
 	{
-		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 15 LIMIT 6');
+		$query = $this->db->query('SELECT ms.id id, ms.poster poster FROM genres_movieseries AS gm INNER JOIN movieseries AS ms ON gm.movieseries_id  = ms.id WHERE gm.genres_id = 15 LIMIT 9');
 		return $query->result();
 	}
 

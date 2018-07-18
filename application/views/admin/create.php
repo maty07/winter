@@ -50,13 +50,9 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-8">
+							<div class="form-group col-md-12">
 								<label>Poster</label>
 								<input type="text" name="poster" class="form-control">
-							</div>
-							<div class="form-group col-md-4">
-								<label>Calificación</label>
-								<input type="text" name="rating" class="form-control">
 							</div>
 						</div>
 						<div class="form-row">
@@ -66,24 +62,25 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label>Géneros</label>
-								<select class="form-control" name="genres[]" multiple="" required>
-									<option>Seleccione hasta 4 géneros</option>
-									<?php foreach ($genres as $key): ?>
-										<option value="<?php echo $key->id; ?>">
-											<?php echo $key->name; ?>
-										</option>
-									<?php endforeach ?>
-								</select>
+							<div class="form-group col-md-12">
+								<label>Géneros</label><br>
+								<?php foreach ($genres as $key): ?>
+									<input type="checkbox" name="genres[]" value="<?php echo $key->id ?>">&nbsp;<?php echo $key->name; ?>
+								<?php endforeach ?>
 							</div>
+						</div>
+						<div class="form-row">
 							<div class="form-group col-md-6">
 								<label>Categoria</label>
 								<select class="form-control" name="category">
 									<option>Seleccione</option>
-									<option value="Movie">Pelicula</option>
+									<option value="Movie">Movie</option>
 									<option value="Serie">Serie</option>
 								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<label>Calificación</label>
+								<input type="text" name="rating" class="form-control">
 							</div>
 						</div>
 						<div class="text-center">
